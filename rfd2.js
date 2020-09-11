@@ -174,7 +174,7 @@ var DomOutline = function (options) {
 reda = label_text;
  var er=  getElementTreeXPath(reda)
 console.log(er)
-if (reda.className!="text-center12333" && elementpicked !=er ) {
+if (reda.className!="trust-seals-preview" && elementpicked !=er ) {
    var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
     console.log(re )
