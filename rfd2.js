@@ -175,7 +175,7 @@ reda = label_text;
  var er=  getElementTreeXPath(reda)
 console.log(er)
 if (reda.className!="text-center12333" && elementpicked !=er ) {
-   var re= document.getElementsByClassName("text-center12333")
+   var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
     console.log(re )
     for (var i =re.length-1; i >-1; i--) {
