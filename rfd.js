@@ -84,8 +84,44 @@ var DomOutline = function (options) {
             element.remove();
         });
     }
+ 
+     function getElementTreeXPath(element) {
+        var paths = [];
+        for (; element && element.nodeType == Node.ELEMENT_NODE;
+               element = element.parentNode)
+        {
+            var index = 0;
+            var hasFollowingSiblings = false;
+            for (var sibling = element.previousSibling; sibling;
+                 sibling = sibling.previousSibling)
+            {
+                if (sibling.nodeType == Node.DOCUMENT_TYPE_NODE)
+                    continue;
 
-    function compileLabelText(element, width, height) {
+                if (sibling.nodeName == element.nodeName)
+                    ++index;
+            }
+
+            for (var sibling = element.nextSibling;
+                 sibling && !hasFollowingSiblings;
+                 sibling = sibling.nextSibling)
+            {
+                if (sibling.nodeName == element.nodeName)
+                    hasFollowingSiblings = true;
+            }
+
+            var tagName = (element.prefix ? element.prefix + ":" : "")
+                + element.localName;
+            var pathIndex = (index || hasFollowingSiblings ? "["
+                + (index + 1) + "]" : "");
+            paths.splice(0, 0, tagName + pathIndex);
+        }
+
+        return paths.length ? "/" + paths.join("/") : null;
+    }
+ 
+ 
+ function compileLabelText(element, width, height) {
         var label = element.tagName.toLowerCase();
         if (element.id) {
             label += '#' + element.id;
@@ -124,10 +160,12 @@ var DomOutline = function (options) {
         if (label_text!=reda) {
 
 
+ 
 reda = label_text;
-
-if (reda!="div#pos-editor-instruction-container.text-center" && elementpicked !=reda ) {
-   var re= document.getElementsByClassName("trust-seals-preview")
+ var er=  getElementTreeXPath(reda)
+console.log(er)
+if (reda.className!="text-center12333" && elementpicked !=er ) {
+   var re= document.getElementsByClassName("text-center12333")
    if(re && re.length>0){
     console.log(re )
     for (var i =re.length-1; i >-1; i--) {
@@ -136,7 +174,22 @@ if (reda!="div#pos-editor-instruction-container.text-center" && elementpicked !=
     }
 //console.log(re)
    }
- jQuery('<div id="trust-seals-content-div" class="trust-seals-preview" style="text-align: center; width: 100%;"><div style="display: inline-block;"><div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=005-100-verified&amp;color-1=f41717" alt="100% Verified" style="width: 100px; height: 100px;"></div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=011-lowest-price&amp;color-1=f41717" alt="Lowest Price" style="width: 100px; height: 100px;"></div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=019-15-Day-Guarantee&amp;color-1=f41717" alt="15 Day Guarantee" style="width: 100px; height: 100px;"></div></div></div></div>').appendTo(""+reda);
+        var cp=document.createElement("p")
+    cp.className="ingore"
+    cp.innerHTML='<div id="trust-seals-content-div" class="trust-seals-preview" style="text-align: center; width: 100%;"><div style="display: inline-block;"><div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=005-100-verified&amp;color-1=f41717" alt="100% Verified" style="width: 100px; height: 100px;"></div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=011-lowest-price&amp;color-1=f41717" alt="Lowest Price" style="width: 100px; height: 100px;"></div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=019-15-Day-Guarantee&amp;color-1=f41717" alt="15 Day Guarantee" style="width: 100px; height: 100px;"></div></div></div></div>'
+    reda.appendChild(cp)
+    console.log(cp)
+// jQuery('<p class="ingore"><p id="re222"  class="text-center12333" ><a href="#" class="btn btn-primary">Buy Now</a></p> </p>').appendTo(""+reda);
+//console.log("afte"+elementpicked)
+elementpicked= er;
+//console.log("before"+elementpicked)
+
+
+
+
+}
+ 
+// jQuery('<div id="trust-seals-content-div" class="trust-seals-preview" style="text-align: center; width: 100%;"><div style="display: inline-block;"><div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=005-100-verified&amp;color-1=f41717" alt="100% Verified" style="width: 100px; height: 100px;"></div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=011-lowest-price&amp;color-1=f41717" alt="Lowest Price" style="width: 100px; height: 100px;"></div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=019-15-Day-Guarantee&amp;color-1=f41717" alt="15 Day Guarantee" style="width: 100px; height: 100px;"></div></div></div></div>').appendTo(""+reda);
 //console.log("afte"+elementpicked)
 elementpicked= reda;
 //console.log("before"+elementpicked)
@@ -155,6 +208,9 @@ elementpicked= reda;
 
 
         }
+     
+     
+     
         self.elements.label.css({ top: label_top, left: label_left }).text(label_text);
         self.elements.top.css({ top: Math.max(0, top - b), left: pos.left - b, width: pos.width + b, height: b });
         self.elements.bottom.css({ top: top + pos.height, left: pos.left - b, width: pos.width + b, height: b });
