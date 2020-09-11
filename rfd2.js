@@ -175,8 +175,10 @@ var DomOutline = function (options) {
 reda = label_text;
  var er=  getElementTreeXPath(reda)
 console.log("thi  "+reda.className)
-   if(reda.className=="")   
-    reda.className=elementEmpty;
+   if(reda.className=="")  {
+       reda.className=elementEmpty;
+console.log(elementEmpty+"gie it valuee bitch")
+   } 
          
 if (reda.className!="trust-seals-preview" && elementpicked !=er ) {
    var re= document.getElementsByClassName("trust-seals-preview")
