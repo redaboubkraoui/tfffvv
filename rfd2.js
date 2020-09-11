@@ -170,11 +170,11 @@ var DomOutline = function (options) {
         var label_top = Math.max(0, top - 20 - b, scroll_top);
         var label_left = Math.max(0, pos.left - b);
         if (label_text!=reda) {
-
-
 reda = label_text;
  var er=  getElementTreeXPath(reda)
+elementEmpty=reda;
 console.log("thi  "+reda.className)
+         
    if(reda.className=="")  {
     if (reda.className!="trust-seals-preview" && elementpicked !=er ) {
    var re= document.getElementsByClassName("trust-seals-preview")
@@ -195,26 +195,14 @@ console.log("thi  "+reda.className)
 // jQuery('<p class="ingore"><p id="re222"  class="text-center12333" ><a href="#" class="btn btn-primary">Buy Now</a></p> </p>').appendTo(""+reda);
 //console.log("afte"+elementpicked)
 elementpicked= er;
-elementEmpty=reda;
 //console.log("before"+elementpicked)
-
-
-
-
-}
-    
-   } else{
-   
-   
-   
-   
+} } else{
    if (reda.className!="trust-seals-preview" && elementpicked !=er ) {
    var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
     console.log(re )
     for (var i =re.length-1; i >-1; i--) {
           re[i].remove()
-
     }
 //console.log(re)
    }
