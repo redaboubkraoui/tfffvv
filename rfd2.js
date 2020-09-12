@@ -205,6 +205,20 @@ console.log("thi  "+reda.className)
 //console.log("afte"+elementpicked)
 elementpicked= er;
 jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
+      $('.deferent').click(function() {
+         var re= document.getElementsByClassName("trust-seals-preview")
+   if(re && re.length>0){
+    console.log(re )
+    for (var i =re.length-1; i >-1; i--) {
+          re[i].remove()
+    }
+//console.log(re)
+   }
+         myDomOutline.start();
+        $('#pos-editor-instruction-container').css("display" ,"block");
+        $('#pos-editor-actions').css("display" ,"none");
+        $('#trust-seals-content-div').css("opacity","0.5");
+});
 
 //console.log("before"+elementpicked)
 } } else{
@@ -284,21 +298,3 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
 
     return pub;
 };
-$(document).ready(function() {
-    $('#trust-seals-content-div').css("opacity","0.5");
-
-    $('.deferent').click(function() {
-         var re= document.getElementsByClassName("trust-seals-previews")
-   if(re && re.length>0){
-    console.log(re )
-    for (var i =re.length-1; i >-1; i--) {
-          re[i].remove()
-    }
-//console.log(re)
-   }
-         myDomOutline.start();
-        $('#pos-editor-instruction-container').css("display" ,"block");
-        $('#pos-editor-actions').css("display" ,"none");
-        $('#trust-seals-content-div').css("opacity","0.5");
-});
-})
