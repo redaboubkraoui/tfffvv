@@ -296,5 +296,5 @@ $(document).ready(function() {
         $('#pos-editor-actions').css("display" ,"none");
         $('#trust-seals-content-div').css("opacity","0.5");
 });
-}
+})
 
