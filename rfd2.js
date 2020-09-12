@@ -3,6 +3,12 @@
  var elementpicked="";
 var elementEmpty="";
 var datainject="";
+    var url_string = window.location.href
+var url = new URL(url_string);
+var tkn = url.searchParams.get("tk");
+     FetchData(tkn)
+
+
 var DomOutline = function (options) {
     options = options || {};
 
@@ -161,10 +167,6 @@ var DomOutline = function (options) {
         var top = pos.top + scroll_top;
    var label_text = compileLabelText(pub.element, pos.width, pos.height);
 
-    var url_string = window.location.href
-var url = new URL(url_string);
-var tkn = url.searchParams.get("tk");
-     FetchData(tkn)
 
  if (label_text!=reda) {
 
