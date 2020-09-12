@@ -2,9 +2,8 @@ function FetchData(tkn){
   $.ajax({
         type: "POST",
         url: "/FetchData?tkn="+tkn,
-        data: {
-          'red':"reffff"
-        },
+        data:"reda"
+        ,
         success: function(data) {
             if (data) {
             
