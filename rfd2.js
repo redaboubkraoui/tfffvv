@@ -1,4 +1,4 @@
-var datainject="";
+let datainject="";
 function FetchData(tkn){
   $.ajax({
         type: "GET",
