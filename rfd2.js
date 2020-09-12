@@ -256,6 +256,7 @@ elementEmpty=reda.className;
             jQuery('body').on('keyup.' + self.opts.namespace, stopOnEscape);
             if (self.opts.onClick) {
                 setTimeout(function () {
+                 jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
                     jQuery('body').on('click.' + self.opts.namespace, function(e){
                         if (self.opts.filter) {
                             if (!jQuery(e.target).is(self.opts.filter)) {
