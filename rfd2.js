@@ -215,7 +215,7 @@ console.log("thi  "+reda.className)
 
  var cp=document.createElement("p")
     cp.className="ingore"
-    cp.innerHTML='<div id="trust-seals-content-div" class="trust-seals-preview" style="text-align: center; width: 100%;"><div style="display: inline-block;"><div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=005-100-verified&amp;color-1=f41717" alt="100% Verified" style="width: 100px; height: 100px;"></div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=011-lowest-price&amp;color-1=f41717" alt="Lowest Price" style="width: 100px; height: 100px;"></div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=019-15-Day-Guarantee&amp;color-1=f41717" alt="15 Day Guarantee" style="width: 100px; height: 100px;"></div></div></div></div>';
+    cp.innerHTML=datainject
     elementEmpty.appendChild(cp)
     console.log(cp)
 // jQuery('<p class="ingore"><p id="re222"  class="text-center12333" ><a href="#" class="btn btn-primary">Buy Now</a></p> </p>').appendTo(""+reda);
@@ -251,7 +251,7 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
 
  var cp=document.createElement("p")
     cp.className="ingore"
-    cp.innerHTML='<div id="trust-seals-content-div" class="trust-seals-preview" style="text-align: center; width: 100%;"><div style="display: inline-block;"><div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=005-100-verified&amp;color-1=f41717" alt="100% Verified" style="width: 100px; height: 100px;"></div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=011-lowest-price&amp;color-1=f41717" alt="Lowest Price" style="width: 100px; height: 100px;"></div><div style="width: 100px; display: inline-block; margin: 0px 7px; vertical-align: top;"><img src="https://hektorcommerce.com/apps/trustseals/svg_images/?image=019-15-Day-Guarantee&amp;color-1=f41717" alt="15 Day Guarantee" style="width: 100px; height: 100px;"></div></div></div></div>';
+    cp.innerHTML=datainject;
     reda.appendChild(cp)
     console.log(cp)
 // jQuery('<p class="ingore"><p id="re222"  class="text-center12333" ><a href="#" class="btn btn-primary">Buy Now</a></p> </p>').appendTo(""+reda);
