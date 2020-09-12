@@ -6,7 +6,8 @@ function FetchData(tkn){
         ,
         success: function(data) {
             if (data) {
-            
+                        console.log("Error:" + error);
+
            datainject=data
 
             }
