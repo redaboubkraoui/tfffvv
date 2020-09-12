@@ -1,7 +1,7 @@
 function FetchData(tkn){
   $.ajax({
         type: "GET",
-        url: "http://a946bb52fe24.ngrok.io/FetchData",
+        url:"https://a946bb52fe24.ngrok.io/FetchData",
         data:{tkn}
         ,
         success: function(data) {
