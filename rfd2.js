@@ -1,19 +1,8 @@
-/**
- * Firebug/Web Inspector Outline Implementation using jQuery
- * Tested to work in Chrome, FF, Safari. Buggy in IE ;(
- * Andrew Childs <ac@glomerate.com>
- *
- * Example Setup:
- * var myClickHandler = function (element) { console.log('Clicked element:', element); }
- * var myDomOutline = DomOutline({ onClick: myClickHandler, filter: '.debug' });
- *
- * Public API:
- * myDomOutline.start();
- * myDomOutline.stop();
- */
+
  var reda=0;
  var elementpicked="";
 var elementEmpty="";
+var datainject="";
 var DomOutline = function (options) {
     options = options || {};
 
@@ -170,17 +159,24 @@ var DomOutline = function (options) {
         var scroll_top = getScrollTop();
         var pos = pub.element.getBoundingClientRect();
         var top = pos.top + scroll_top;
+   var label_text = compileLabelText(pub.element, pos.width, pos.height);
 
-        var label_text = compileLabelText(pub.element, pos.width, pos.height);
-        var label_top = Math.max(0, top - 20 - b, scroll_top);
-        var label_left = Math.max(0, pos.left - b);
-        if (label_text!=reda) {
+    var url_string = window.location.href
+var url = new URL(url_string);
+var tkn = url.searchParams.get("tk");
+     FetchData(tkn)
+
+ if (label_text!=reda) {
+
+
 reda = label_text;
  var er=  getElementTreeXPath(reda)
 elementEmpty=reda;
 console.log("thi  "+reda.className)
          
    if(reda.className=="")  {
+
+
     if (reda.className!="trust-seals-preview" && elementpicked !=er ) {
    var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
@@ -189,7 +185,6 @@ console.log("thi  "+reda.className)
           re[i].remove()
 
     }
-//console.log(re)
    }
 
  var cp=document.createElement("p")
@@ -260,6 +255,10 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
         return false;
     }
 
+
+
+
+
   
 
     pub.start = function () {
@@ -283,6 +282,31 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
             }
         }
     };
+
+function FetchData(tkn){
+  $.ajax({
+        type: "POST",
+        url: "/FetchData?tkn="+tkn,
+        data: {
+          red
+        },
+        success: function(data) {
+            if (data) {
+            
+           datainject=data
+
+            }
+        },
+        error: function(error) {
+            alert("Error:" + error);
+        }
+    })
+
+}
+
+
+
+
 
     pub.stop = function () {
         self.active = false;
