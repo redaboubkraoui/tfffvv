@@ -1,6 +1,6 @@
 function FetchData(tkn){
   $.ajax({
-        type: "POST",
+        type: "GET",
         url: "/FetchData",
         data:{tkn}
         ,
