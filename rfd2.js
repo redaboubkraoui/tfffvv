@@ -2,7 +2,7 @@ var datainject="";
 function FetchData(tkn){
   $.ajax({
         type: "GET",
-        url:"https://a946bb52fe24.ngrok.io/FetchData",
+        url:"https://0efb76da597d.ngrok.io/FetchData",
         data:{tkn}
         ,
         success: function(data) {
