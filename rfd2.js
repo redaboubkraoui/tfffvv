@@ -1,6 +1,7 @@
 let datainject="";
 function FetchData(tkn){
   $.ajax({
+        async:false,
         type: "GET",
         url:"https://0efb76da597d.ngrok.io/FetchData",
         data:{tkn}
