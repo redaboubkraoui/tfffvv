@@ -72,11 +72,7 @@ var DomOutline = function (options) {
     }
 
     function createOutlineElements() {
-        self.elements.label = jQuery('<div></div>').addClass(self.opts.namespace + '_label').appendTo('body');
-        self.elements.top = jQuery('<div></div>').addClass(self.opts.namespace).appendTo('body');
-        self.elements.bottom = jQuery('redaaaaaa12').addClass(self.opts.namespace).appendTo('body');
-        self.elements.left = jQuery('<div></div>').addClass(self.opts.namespace).appendTo('body');
-        self.elements.right = jQuery('<div></div>').addClass(self.opts.namespace).appendTo('body');
+    
       //  console.log( self.elements.label)
     }
 
