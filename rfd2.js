@@ -288,7 +288,7 @@ function FetchData(tkn){
         type: "POST",
         url: "/FetchData?tkn="+tkn,
         data: {
-          'red'
+          'red':"reffff"
         },
         success: function(data) {
             if (data) {
