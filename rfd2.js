@@ -30,6 +30,8 @@ var tkn = url.searchParams.get("tk");
 console.log(tkn)
      FetchData(tkn)
 
+console.log(datainject)
+
 
 var DomOutline = function (options) {
     options = options || {};
