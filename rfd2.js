@@ -115,12 +115,12 @@ var DomOutline = function (options) {
             return getElementTreeXPath(element);
     }
  function clickHandler(e) {
-        pub.stop();
-        self.opts.onClick(pub.element);
         createOutlineElements();
         $('#pos-editor-instruction-container').css("display" ,"none");
         $('#pos-editor-actions').css("display" ,"block");
         $('#trust-seals-content-div').css("opacity","unset");
+          pub.stop();
+
         return false;
     }
 
