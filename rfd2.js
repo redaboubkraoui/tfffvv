@@ -1,3 +1,4 @@
+var datainject="";
 function FetchData(tkn){
   $.ajax({
         type: "GET",
@@ -23,7 +24,6 @@ function FetchData(tkn){
  var reda=0;
  var elementpicked="";
 var elementEmpty="";
-var datainject="";
     var url_string = window.location.href
 var url = new URL(url_string);
 var tkn = url.searchParams.get("tk");
@@ -31,7 +31,6 @@ console.log(tkn)
      FetchData(tkn)
 
 console.log(datainject)
-
 
 var DomOutline = function (options) {
     options = options || {};
