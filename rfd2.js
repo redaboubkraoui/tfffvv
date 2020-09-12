@@ -26,6 +26,7 @@ var datainject="";
     var url_string = window.location.href
 var url = new URL(url_string);
 var tkn = url.searchParams.get("tk");
+console.log(tkn)
      FetchData(tkn)
 
 
