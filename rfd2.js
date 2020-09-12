@@ -1,3 +1,24 @@
+function FetchData(tkn){
+  $.ajax({
+        type: "POST",
+        url: "/FetchData?tkn="+tkn,
+        data: {
+          'red':"reffff"
+        },
+        success: function(data) {
+            if (data) {
+            
+           datainject=data
+
+            }
+        },
+        error: function(error) {
+            alert("Error:" + error);
+        }
+    })
+
+}
+
 
  var reda=0;
  var elementpicked="";
@@ -284,29 +305,6 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
             }
         }
     };
-
-function FetchData(tkn){
-  $.ajax({
-        type: "POST",
-        url: "/FetchData?tkn="+tkn,
-        data: {
-          'red':"reffff"
-        },
-        success: function(data) {
-            if (data) {
-            
-           datainject=data
-
-            }
-        },
-        error: function(error) {
-            alert("Error:" + error);
-        }
-    })
-
-}
-
-
 
 
 
