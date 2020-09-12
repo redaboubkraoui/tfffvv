@@ -12,7 +12,7 @@ function FetchData(tkn){
             }
         },
         error: function(error) {
-            alert("Error:" + error);
+            console.log("Error:" + error);
         }
     })
 
