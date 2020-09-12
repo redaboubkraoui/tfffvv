@@ -257,14 +257,7 @@ elementEmpty=reda.className;
             if (self.opts.onClick) {
                 setTimeout(function () {
                  jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
-                    jQuery('body').on('click.' + self.opts.namespace, function(e){
-                        if (self.opts.filter) {
-                            if (!jQuery(e.target).is(self.opts.filter)) {
-                                return false;
-                            }
-                        }
-                        clickHandler.call(this, e);
-                    });
+                   
                 }, 50);
             }
         }
