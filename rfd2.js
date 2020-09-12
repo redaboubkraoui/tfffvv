@@ -114,6 +114,15 @@ var DomOutline = function (options) {
         else
             return getElementTreeXPath(element);
     }
+ function clickHandler(e) {
+        pub.stop();
+        self.opts.onClick(pub.element);
+        createOutlineElements();
+        $('#pos-editor-instruction-container').css("display" ,"none");
+        $('#pos-editor-actions').css("display" ,"block");
+        $('#trust-seals-content-div').css("opacity","unset");
+        return false;
+    }
 
     function getElementTreeXPath(element) {
         var paths = [];
@@ -195,6 +204,8 @@ console.log("thi  "+reda.className)
 // jQuery('<p class="ingore"><p id="re222"  class="text-center12333" ><a href="#" class="btn btn-primary">Buy Now</a></p> </p>').appendTo(""+reda);
 //console.log("afte"+elementpicked)
 elementpicked= er;
+jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
+
 //console.log("before"+elementpicked)
 } } else{
    if (reda.className!="trust-seals-preview" && elementpicked !=er ) {
@@ -216,6 +227,8 @@ elementpicked= er;
 //console.log("afte"+elementpicked)
 elementpicked= er;
 elementEmpty=reda.className;
+jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
+
 //console.log("before"+elementpicked)
    }
    }
@@ -237,15 +250,7 @@ elementEmpty=reda.className;
         return false;
     }
 
-    function clickHandler(e) {
-        pub.stop();
-        self.opts.onClick(pub.element);
-        createOutlineElements();
-        $('#pos-editor-instruction-container').css("display" ,"none");
-        $('#pos-editor-actions').css("display" ,"block");
-        $('#trust-seals-content-div').css("opacity","unset");
-        return false;
-    }
+  
 
     pub.start = function () {
         initStylesheet();
