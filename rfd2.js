@@ -279,7 +279,10 @@ elementEmpty=reda.className;
 
     return pub;
 };
-$('.deferent').click(function() {
+$(document).ready(function() {
+    $('#trust-seals-content-div').css("opacity","0.5");
+
+    $('.deferent').click(function() {
          var re= document.getElementsByClassName("trust-seals-previews")
    if(re && re.length>0){
     console.log(re )
@@ -293,3 +296,5 @@ $('.deferent').click(function() {
         $('#pos-editor-actions').css("display" ,"none");
         $('#trust-seals-content-div').css("opacity","0.5");
 });
+}
+
