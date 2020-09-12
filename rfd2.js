@@ -2,7 +2,7 @@ function FetchData(tkn){
   $.ajax({
         type: "POST",
         url: "/FetchData",
-        data:tkn
+        data:{tkn}
         ,
         success: function(data) {
             if (data) {
