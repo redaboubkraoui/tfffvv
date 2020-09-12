@@ -240,7 +240,10 @@ elementEmpty=reda.className;
     function clickHandler(e) {
         pub.stop();
         self.opts.onClick(pub.element);
-
+        createOutlineElements();
+        $('#pos-editor-instruction-container').css("display" ,"none");
+        $('#pos-editor-actions').css("display" ,"block");
+        $('#trust-seals-content-div').css("opacity","unset");
         return false;
     }
 
@@ -276,3 +279,17 @@ elementEmpty=reda.className;
 
     return pub;
 };
+$('.deferent').click(function() {
+         var re= document.getElementsByClassName("trust-seals-previews")
+   if(re && re.length>0){
+    console.log(re )
+    for (var i =re.length-1; i >-1; i--) {
+          re[i].remove()
+    }
+//console.log(re)
+   }
+         myDomOutline.start();
+        $('#pos-editor-instruction-container').css("display" ,"block");
+        $('#pos-editor-actions').css("display" ,"none");
+        $('#trust-seals-content-div').css("opacity","0.5");
+});
