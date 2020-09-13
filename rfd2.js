@@ -310,7 +310,29 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
     };
 
 
+function sendplaceToServer(){
+var pos = reda.className
+console.log(pos)
+ // $.ajax({
+      //  async:false,
+      //  type: "GET",
+      //  url:"http://ee9a817664ad.ngrok.io/UpdatePosition",
+     //   data:{}
+     //   ,
+     //   success: function(data) {
+          //  if (data) {
+              //          console.log(data);
 
+         //  datainject=data
+
+           // }
+     //   },
+    //    error: function(error) {
+    //        console.log("Error:" + error);
+    //    }
+///    })
+
+}
     pub.stop = function () {
         self.active = false;
         removeOutlineElements();
