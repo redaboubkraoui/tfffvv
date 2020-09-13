@@ -322,7 +322,7 @@ sendplaceToServer(pos)
 
 
 function sendplaceToServer(pos){
-  var pos=String(pos)
+  var pos=pos.toString();
    $.ajax({
  async:false,
        type: "GET",
