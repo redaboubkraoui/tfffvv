@@ -311,9 +311,26 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
 
 
 jQuery('#sendplaceToServer').on('click' ,function(){
-    
-var pos = reda.className
+
+var pos = reda
 console.log(pos)
+ $.ajax({
+ async:false,
+       type: "GET",
+        url:"http://ee9a817664ad.ngrok.io/UpdatePosition",
+       data:{pos}
+       ,
+        success: function(data) {
+        if (data) {
+         console.log(data);
+
+
+    }
+   },
+ error: function(error) {
+       console.log("Error:" + error);
+  }
+  })
 
 
 
