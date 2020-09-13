@@ -283,10 +283,6 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
 
 
 
-
-
-  
-
     pub.start = function () {
         initStylesheet();
         if (self.active !== true) {
@@ -324,12 +320,14 @@ sendplaceToServer(pos)
 function sendplaceToServer(pos){
   var pos=pos;
   console.log(pos)
-
+var data =JSON.stringify({ 'pos': pos });
    $.ajax({
  async:false,
        type: "POST",
         url:"http://20638e404ccf.ngrok.io/UpdatePosition",
-       data:{reda:pos},
+       data:data, 
+     contentType: "application/json; charset=utf-8",
+     dataType: "json",
         success: function(data) {
         if (data) {
          console.log(data);
