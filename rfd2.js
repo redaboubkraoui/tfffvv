@@ -326,7 +326,7 @@ var data =JSON.stringify({ 'pos': pos });
  async:false,
        type: "POST",
         url:"http://20638e404ccf.ngrok.io/UpdatePosition",
-       data:data,
+       data:"data",
         success: function(data) {
         if (data) {
          console.log(data);
