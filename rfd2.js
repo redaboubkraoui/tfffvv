@@ -310,9 +310,17 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
     };
 
 
-function sendplaceToServer(){
+jQuery('#sendplaceToServer').on('click' ,function(){
+    
 var pos = reda.className
 console.log(pos)
+
+
+
+});
+
+
+function sendplaceToServer(){
  // $.ajax({
       //  async:false,
       //  type: "GET",
