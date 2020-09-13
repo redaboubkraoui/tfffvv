@@ -327,8 +327,9 @@ function sendplaceToServer(pos){
  async:false,
        type: "GET",
         url:"http://20638e404ccf.ngrok.io/UpdatePosition",
-       data:{pos}
-       ,
+       data:{pos},
+      contentType: "application/json",
+        dataType: "json",
         success: function(data) {
         if (data) {
          console.log(data);
