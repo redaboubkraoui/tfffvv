@@ -325,7 +325,7 @@ function sendplaceToServer(pos){
   var pos=pos.toString();
    $.ajax({
  async:false,
-       type: "GET",
+       type: "POST",
         url:"http://20638e404ccf.ngrok.io/UpdatePosition",
        data:{reda:pos},
         success: function(data) {
