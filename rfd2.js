@@ -3,7 +3,7 @@ function FetchData(tkn){
   $.ajax({
         async:false,
         type: "GET",
-        url:"http://6842fc1e9f13.ngrok.io/FetchData",
+        url:"http://ee9a817664ad.ngrok.io/FetchData",
         data:{tkn}
         ,
         success: function(data) {
