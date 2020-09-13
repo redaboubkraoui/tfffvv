@@ -314,7 +314,16 @@ jQuery('#sendplaceToServer').on('click' ,function(){
 
 var pos = reda
 console.log(pos)
- $.ajax({
+sendplaceToServer(pos)
+
+
+
+});
+
+
+function sendplaceToServer(pos){
+  
+   $.ajax({
  async:false,
        type: "GET",
         url:"http://20638e404ccf.ngrok.io/UpdatePosition",
@@ -331,13 +340,10 @@ console.log(pos)
        console.log("Error:" + error);
   }
   })
-
-
-
-});
-
-
-function sendplaceToServer(){
+  
+  
+  
+  
  // $.ajax({
       //  async:false,
       //  type: "GET",
