@@ -195,8 +195,8 @@ var DomOutline = function (options) {
 
  if (label_text!=reda) {
 
-
-reda = label_text;
+ POS=label_text;
+ reda = label_text;
  var er=  getElementTreeXPath(reda)
 elementEmpty=reda;
 console.log("thi  "+reda.className)
@@ -319,7 +319,6 @@ sendplaceToServer(pos)
 
 
 function sendplaceToServer(pos){
-  var pos=pos;
   console.log(pos)
 var data =JSON.stringify({ 'pos': pos });
   console.log(pos.outerHTML);
