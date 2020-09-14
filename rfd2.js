@@ -313,14 +313,12 @@ sendplaceToServer(pos)
 
 
 function sendplaceToServer(pos){
-
-  console.log(pos.className);
-  var data =JSON.stringify({ 'pos': pos });
+  var data = pos.className;
    $.ajax({
  async:false,
        type: "POST",
         url:"http://4579c81c46ff.ngrok.io/UpdatePosition",
-       data:"data",
+       data:data,
         success: function(data) {
         if (data) {
          console.log(data);
