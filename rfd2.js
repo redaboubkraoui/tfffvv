@@ -194,7 +194,7 @@ function getElementByXpath(path) {
 
  if (label_text!=reda) {
 
-
+ 
  reda = label_text;
  var er=  getElementTreeXPath(reda)
 elementEmpty=reda;
