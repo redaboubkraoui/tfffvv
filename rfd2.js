@@ -4,7 +4,7 @@ function FetchData(tkn){
   $.ajax({
         async:false,
         type: "GET",
-        url:"http://4579c81c46ff.ngrok.io/FetchData",
+        url:"http://0ccec7a943d6.ngrok.io/FetchData",
         data:{tkn}
         ,
         success: function(data) {
@@ -314,7 +314,7 @@ function sendplaceToServer(pos){
    $.ajax({
  async:false,
        type: "POST",
-        url:"http://4579c81c46ff.ngrok.io/UpdatePosition",
+        url:"http://0ccec7a943d6.ngrok.io/UpdatePosition",
        data:{'data' :data,'tkn':tkn},
         success: function(data) {
         if (data) {
