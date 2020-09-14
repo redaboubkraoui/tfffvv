@@ -29,10 +29,7 @@ var elementEmpty="";
     var url_string = window.location.href
 var url = new URL(url_string);
 var tkn = url.searchParams.get("tk");
-console.log(tkn)
-     FetchData(tkn)
-
-console.log(datainject)
+FetchData(tkn)
 
 var DomOutline = function (options) {
     options = options || {};
@@ -195,14 +192,14 @@ var DomOutline = function (options) {
 
  if (label_text!=reda) {
 
- POS=label_text;
+
  reda = label_text;
  var er=  getElementTreeXPath(reda)
 elementEmpty=reda;
 console.log("thi  "+reda.className)
          
    if(reda.className=="")  {
-
+      POS=label_text;
 
     if (reda.className!="trust-seals-preview" && elementpicked !=er ) {
    var re= document.getElementsByClassName("trust-seals-preview")
@@ -239,6 +236,7 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
 
 //console.log("before"+elementpicked)
 } } else{
+   POS=label_text;
    if (reda.className!="trust-seals-preview" && elementpicked !=er ) {
    var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
