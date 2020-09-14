@@ -313,12 +313,12 @@ sendplaceToServer(POS)
 
 function sendplaceToServer(pos){
   var data =  getElementTreeXPath(pos);
-  console.log(data)
+  console.log(tkn)
    $.ajax({
  async:false,
        type: "POST",
         url:"http://4579c81c46ff.ngrok.io/UpdatePosition",
-       data:{'data' :data},
+       data:{'data' :data,'tkn':tkn},
         success: function(data) {
         if (data) {
          console.log(data);
