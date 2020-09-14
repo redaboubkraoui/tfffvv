@@ -331,6 +331,7 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
 jQuery('#sendplaceToServer').on('click' ,function(){
 
 var pos = POS;
+  console.log(POS.className)
  let x = getCSSPath("."+POS.className);
    console.log("all path Select " + x)
 
