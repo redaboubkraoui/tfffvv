@@ -98,34 +98,8 @@ var DomOutline = function (options) {
             element.remove();
         });
     }
+ 
   
-  function getCSSPath(el) {
-                let rendered_path_parts = [];
-
-                $( el ).parents().addBack().each((i, el) => {
-                    const $el = $( el );
-                    let current_el_path = $el.prop('tagName').toLowerCase();
-
-                    if ($el.attr('id')) {
-                        current_el_path += '#' + $el.attr('id');
-                    }
-
-                    if ($el.attr('class')) {
-                        current_el_path += '.' + $el.attr('class').split(' ').join('.');
-                    }
-
-                    rendered_path_parts.push( current_el_path );
-                })
-
-                return rendered_path_parts.join(' ');
-            }
-
-            $.fn.extend({
-                getPath: function() {
-                    return getCSSPath(this.length === 1 ? this : this.eq(0));
-                }
-            });
-         
         
   
   
@@ -330,11 +304,6 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
 
 jQuery('#sendplaceToServer').on('click' ,function(){
 
-var pos = POS;
-  console.log(POS.className)
- let x = getCSSPath("."+POS.className);
-   console.log("all path Select " + x)
-
 sendplaceToServer(pos)
 
 
@@ -344,7 +313,6 @@ sendplaceToServer(pos)
 
 function sendplaceToServer(pos){
   var data =  getElementTreeXPath(pos);
-data= getElementByXpath(data).outerHTML
   console.log(data)
    $.ajax({
  async:false,
