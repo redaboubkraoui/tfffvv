@@ -304,7 +304,7 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
 
 jQuery('#sendplaceToServer').on('click' ,function(){
 
-sendplaceToServer(pos)
+sendplaceToServer(POS)
 
 
 
