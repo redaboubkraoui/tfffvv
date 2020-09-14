@@ -172,7 +172,10 @@ var DomOutline = function (options) {
         return paths.length ? "/" + paths.join("/") : null;
     }
 
-
+function getElementByXpath(path) {
+    return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}
+  
     function updateOutlinePosition(e) {
         if (e.target.className.indexOf(self.opts.namespace) !== -1) {
             return;
@@ -310,7 +313,7 @@ sendplaceToServer(pos)
 
 function sendplaceToServer(pos){
   var data =  getElementTreeXPath(pos);
-  
+data= getElementByXpath(data)
    $.ajax({
  async:false,
        type: "POST",
