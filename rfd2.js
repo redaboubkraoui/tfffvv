@@ -117,9 +117,6 @@ var DomOutline = function (options) {
         }
         return element;
     }
-    function getElementByXpath(path) {
-        return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    }
     function getScrollTop() {
         if (!self.elements.window) {
             self.elements.window = jQuery(window);
@@ -312,7 +309,7 @@ sendplaceToServer(POS)
 
 
 function sendplaceToServer(pos){
-  var data =  getElementTreeXPath(pos);
+  var data =  getElementXPath(pos);
   console.log(tkn)
    $.ajax({
  async:false,
