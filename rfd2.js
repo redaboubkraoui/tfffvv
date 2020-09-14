@@ -226,7 +226,6 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
       $('.deferent').click(function() {
          var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
-    console.log(re )
     for (var i =re.length-1; i >-1; i--) {
           re[i].remove()
     }
@@ -243,25 +242,20 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
    if (reda.className!="trust-seals-preview" && elementpicked !=er ) {
    var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
-    console.log(re )
     for (var i =re.length-1; i >-1; i--) {
           re[i].remove()
     }
-//console.log(re)
    }
 
  var cp=document.createElement("p")
     cp.className="ingore"
     cp.innerHTML=datainject;
     reda.appendChild(cp)
-    console.log(cp)
 // jQuery('<p class="ingore"><p id="re222"  class="text-center12333" ><a href="#" class="btn btn-primary">Buy Now</a></p> </p>').appendTo(""+reda);
-//console.log("afte"+elementpicked)
 elementpicked= er;
 elementEmpty=reda.className;
 jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
 
-//console.log("before"+elementpicked)
    }
    }
   //  jQuery('<div  class="ingore"><div  class="text-center"><a href="#" class="btn btn-primary">Buy Now</a></div></div>').appendTo(""+reda);
@@ -319,9 +313,9 @@ sendplaceToServer(pos)
 
 
 function sendplaceToServer(pos){
-  console.log(pos)
-var data =JSON.stringify({ 'pos': pos });
-  console.log(pos.outerHTML);
+
+  console.log(pos.className);
+  var data =JSON.stringify({ 'pos': pos });
    $.ajax({
  async:false,
        type: "POST",
