@@ -3,7 +3,7 @@ function FetchData(tkn){
   $.ajax({
         async:false,
         type: "GET",
-        url:"http://20638e404ccf.ngrok.io/FetchData",
+        url:"http://4579c81c46ff.ngrok.io/FetchData",
         data:{tkn}
         ,
         success: function(data) {
@@ -321,11 +321,11 @@ function sendplaceToServer(pos){
   var pos=pos;
   console.log(pos)
 var data =JSON.stringify({ 'pos': pos });
-  console.log(data);
+  console.log(pos.outerHTML);
    $.ajax({
  async:false,
        type: "POST",
-        url:"http://20638e404ccf.ngrok.io/UpdatePosition",
+        url:"http://4579c81c46ff.ngrok.io/UpdatePosition",
        data:"data",
         success: function(data) {
         if (data) {
