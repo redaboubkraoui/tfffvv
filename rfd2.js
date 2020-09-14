@@ -189,7 +189,6 @@ var DomOutline = function (options) {
         var top = pos.top + scroll_top;
    var label_text = compileLabelText(pub.element, pos.width, pos.height);
 
-
  if (label_text!=reda) {
 
 
@@ -311,7 +310,7 @@ sendplaceToServer(pos)
 
 
 function sendplaceToServer(pos){
-  var data = pos.className;
+  var data = pos.outerHTML;
    $.ajax({
  async:false,
        type: "POST",
