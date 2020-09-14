@@ -98,6 +98,38 @@ var DomOutline = function (options) {
             element.remove();
         });
     }
+  
+  function getCSSPath(el) {
+                let rendered_path_parts = [];
+
+                $( el ).parents().addBack().each((i, el) => {
+                    const $el = $( el );
+                    let current_el_path = $el.prop('tagName').toLowerCase();
+
+                    if ($el.attr('id')) {
+                        current_el_path += '#' + $el.attr('id');
+                    }
+
+                    if ($el.attr('class')) {
+                        current_el_path += '.' + $el.attr('class').split(' ').join('.');
+                    }
+
+                    rendered_path_parts.push( current_el_path );
+                })
+
+                return rendered_path_parts.join(' ');
+            }
+
+            $.fn.extend({
+                getPath: function() {
+                    return getCSSPath(this.length === 1 ? this : this.eq(0));
+                }
+            });
+         
+        
+  
+  
+  
 
     function compileLabelText(element, width, height) {
         var label = element.tagName.toLowerCase();
@@ -171,10 +203,6 @@ var DomOutline = function (options) {
 
         return paths.length ? "/" + paths.join("/") : null;
     }
-
-function getElementByXpath(path) {
-    return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-}
   
     function updateOutlinePosition(e) {
         if (e.target.className.indexOf(self.opts.namespace) !== -1) {
@@ -303,7 +331,9 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
 jQuery('#sendplaceToServer').on('click' ,function(){
 
 var pos = POS;
-console.log(pos)
+ let x = getCSSPath("."+POS.className);
+   console.log("all path Select " + x)
+
 sendplaceToServer(pos)
 
 
