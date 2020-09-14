@@ -1,4 +1,5 @@
 let datainject="";
+let POS=""
 function FetchData(tkn){
   $.ajax({
         async:false,
@@ -308,7 +309,7 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
 
 jQuery('#sendplaceToServer').on('click' ,function(){
 
-var pos = reda
+var pos = POS;
 console.log(pos)
 sendplaceToServer(pos)
 
