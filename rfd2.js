@@ -203,7 +203,6 @@ console.log("thi  "+reda.className)
     if (reda.className!="trust-seals-preview" && elementpicked !=er ) {
    var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
-    console.log(re )
     for (var i =re.length-1; i >-1; i--) {
           re[i].remove()
 
@@ -310,7 +309,8 @@ sendplaceToServer(pos)
 
 
 function sendplaceToServer(pos){
-  var data = pos.outerHTML;
+  var data =  getElementTreeXPath(pos);
+  
    $.ajax({
  async:false,
        type: "POST",
