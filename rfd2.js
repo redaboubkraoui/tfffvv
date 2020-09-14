@@ -313,7 +313,8 @@ sendplaceToServer(pos)
 
 function sendplaceToServer(pos){
   var data =  getElementTreeXPath(pos);
-data= getElementByXpath(data)
+data= getElementByXpath(data).toString()
+  console.log(data)
    $.ajax({
  async:false,
        type: "POST",
