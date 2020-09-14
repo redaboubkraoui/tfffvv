@@ -318,7 +318,7 @@ function sendplaceToServer(pos){
  async:false,
        type: "POST",
         url:"http://4579c81c46ff.ngrok.io/UpdatePosition",
-       data:data,
+       data:{'data' :data},
         success: function(data) {
         if (data) {
          console.log(data);
