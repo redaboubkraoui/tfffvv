@@ -310,12 +310,23 @@ sendplaceToServer(POS)
 
 function sendplaceToServer(pos){
   var data =  getElementXPath(pos);
+  var pageTarget;
   console.log(tkn)
+   var s = document.createElement('script')
+  document.getElementsByTagName("head")[0].appendChild(s);
+  const Path = window.location.pathname.split('/')[1];
+    if(path==="")
+  pageTarget =1
+    else if(path ==="products")
+         pageTarget =2
+    else if (path==="cart")
+        pageTarget =3
+
    $.ajax({
  async:false,
        type: "POST",
         url:"http://54930f21d212.ngrok.io/UpdatePosition",
-       data:{'data' :data,'tkn':tkn},
+       data:{'data' :data,'tkn':tkn,'pageTarget':pageTarget},
         success: function(data) {
         if (data) {
          console.log(data);
