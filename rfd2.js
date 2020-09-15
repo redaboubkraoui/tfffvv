@@ -6,7 +6,7 @@ function FetchData(tkn){
         type: "GET",
         url:"http://a0a68a039c8e.ngrok.io/FetchData",
         data:{tkn}
-        ,
+        , 
         success: function(data) {
             if (data) {
                         console.log(data);
