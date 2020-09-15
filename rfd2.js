@@ -315,11 +315,11 @@ function sendplaceToServer(pos){
    var s = document.createElement('script')
   document.getElementsByTagName("head")[0].appendChild(s);
   const Path = window.location.pathname.split('/')[1];
-    if(path==="")
+    if(Path==="")
   pageTarget =1
-    else if(path ==="products")
+    else if(Path ==="products")
          pageTarget =2
-    else if (path==="cart")
+    else if (Path==="cart")
         pageTarget =3
 
    $.ajax({
