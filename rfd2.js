@@ -330,6 +330,7 @@ function sendplaceToServer(pos){
         success: function(data) {
         if (data) {
          console.log(data);
+window.close()
 
 
     }
