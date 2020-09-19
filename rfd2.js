@@ -4,7 +4,7 @@ function FetchData(tkn){
   $.ajax({
         async:false,
         type: "GET",
-        url:"https://c5bebd4e8680.ngrok.io",
+        url:"https://calm-newt-93.loca.lt",
         data:{tkn}
         , 
         success: function(data) {
@@ -325,7 +325,7 @@ function sendplaceToServer(pos){
    $.ajax({
  async:false,
        type: "POST",
-        url:"https://c5bebd4e8680.ngrok.io/UpdatePosition",
+        url:"https://calm-newt-93.loca.lt/UpdatePosition",
        data:{'data' :data,'tkn':tkn,'pageTarget':pageTarget},
         success: function(data) {
         if (data) {
