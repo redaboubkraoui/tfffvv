@@ -4,7 +4,7 @@ function FetchData(tkn){
   $.ajax({
         async:false,
         type: "GET",
-        url:"https://7b582aac9d76.ngrok.io/FetchData",
+        url:"https://trustbadge.salbimy.com/FetchData",
         data:{tkn}
         , 
         success: function(data) {
@@ -319,7 +319,7 @@ function sendplaceToServer(pos){
    $.ajax({
  async:false,
        type: "POST",
-        url:"https://7b582aac9d76.ngrok.io/UpdatePosition",
+        url:"https://trustbadge.salbimy.com/UpdatePosition",
        data:{'data' :data,'tkn':tkn,'pageTarget':pageTarget},
         success: function(data) {
         if (data) {
