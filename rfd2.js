@@ -4,7 +4,7 @@ function FetchData(tkn){
   $.ajax({
         async:false,
         type: "GET",
-        url:"https://357744cc224d.ngrok.io/FetchData",
+        url:"https://7b582aac9d76.ngrok.io/FetchData",
         data:{tkn}
         , 
         success: function(data) {
@@ -99,12 +99,6 @@ var DomOutline = function (options) {
         });
     }
  
-  
-        
-  
-  
-  
-
     function compileLabelText(element, width, height) {
         var label = element.tagName.toLowerCase();
 
@@ -325,7 +319,7 @@ function sendplaceToServer(pos){
    $.ajax({
  async:false,
        type: "POST",
-        url:"https://357744cc224d.ngrok.io/UpdatePosition",
+        url:"https://7b582aac9d76.ngrok.io/UpdatePosition",
        data:{'data' :data,'tkn':tkn,'pageTarget':pageTarget},
         success: function(data) {
         if (data) {
