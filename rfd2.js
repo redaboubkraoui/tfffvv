@@ -10,7 +10,7 @@ function FetchData(tkn){
         success: function(data) {
             if (data) {
                         console.log(data);
-console.log(data.slice(1,-1));
+        data = data.slice(1,-1);
            datainject=data
 
             }
