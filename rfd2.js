@@ -11,7 +11,7 @@ function FetchData(tkn){
             if (data) {
                         console.log(data);
 console.log(data.slice(1,-1));
-           datainject=data
+           datainject="'"+data+"'"
 
             }
         },
