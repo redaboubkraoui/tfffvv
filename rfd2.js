@@ -10,8 +10,8 @@ function FetchData(tkn){
         success: function(data) {
             if (data) {
                         console.log(data);
-        let div = data.slice(1,-1);
-           datainject='<div class="trust-seals-preview">'+div+'<div>';
+
+           datainject='<div class="trust-seals-preview">'+data+'<div>';
 
             }
         },
