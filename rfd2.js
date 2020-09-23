@@ -11,11 +11,7 @@ function FetchData(tkn){
             if (data) {
                         console.log(data);
 console.log(data.slice(1,-1));
-var el =document.createElement("div")
-    el.className="trust-seals-preview"
-         el.innerHTML=data
-         console.log(el)
-           datainject=data
+           datainject="'"+data+"'"
 
             }
         },
