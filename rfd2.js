@@ -11,7 +11,8 @@ function FetchData(tkn){
             if (data) {
                         console.log(data);
 
-var el = $( '<div class="trust-seals-preview"></div>' );
+var el =document.createElement("div")
+    el.className="trust-seals-preview"
          el= el.html(data)
          console.log(el)
            datainject=el
