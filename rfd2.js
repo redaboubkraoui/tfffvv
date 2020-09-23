@@ -10,7 +10,7 @@ function FetchData(tkn){
         success: function(data) {
             if (data) {
                         console.log(data);
-
+console.log(data.slice(1,-1));
 var el =document.createElement("div")
     el.className="trust-seals-preview"
          el.innerHTML=data
