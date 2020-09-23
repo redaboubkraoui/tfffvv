@@ -11,7 +11,7 @@ function FetchData(tkn){
             if (data) {
                         console.log(data);
         let div = data.slice(1,-1);
-           datainject=div;
+           datainject='<div class="trust-seals-preview">'+div+'<div>';
 
             }
         },
