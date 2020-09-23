@@ -13,7 +13,7 @@ function FetchData(tkn){
 
 var el =document.createElement("div")
     el.className="trust-seals-preview"
-         el= el.html(data)
+         el= el.append(data)
          console.log(el)
            datainject=el
 
