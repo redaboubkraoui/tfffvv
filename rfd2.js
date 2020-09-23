@@ -11,7 +11,10 @@ function FetchData(tkn){
             if (data) {
                         console.log(data);
 
-           datainject=data
+var el = $( '<div class="trust-seals-preview"></div>' );
+         el= el.append(data)
+         console.log(el)
+           datainject=el
 
             }
         },
