@@ -4,7 +4,7 @@ function FetchData(tkn){
   $.ajax({
         async:false,
         type: "GET",
-        url:"https://f143bc33993b.ngrok.io/FetchData",
+        url:"https://anywherevideo.salbimy.com/FetchData",
         data:{tkn}
         , 
         success: function(data) {
@@ -308,7 +308,7 @@ function sendplaceToServer(pos){
    $.ajax({
  async:false,
        type: "POST",
-        url:"https://f143bc33993b.ngrok.io/UpdatePosition",
+        url:"https://anywherevideo.salbimy.com/UpdatePosition",
        data:{'data' :data,'tkn':tkn,'pageTarget':pageTarget},
         success: function(data) {
         if (data) {
@@ -326,24 +326,6 @@ window.close()
   
   
   
- // $.ajax({
-      //  async:false,
-      //  type: "GET",
-      //  url:"http://ee9a817664ad.ngrok.io/UpdatePosition",
-     //   data:{}
-     //   ,
-     //   success: function(data) {
-          //  if (data) {
-              //          console.log(data);
-
-         //  datainject=data
-
-           // }
-     //   },
-    //    error: function(error) {
-    //        console.log("Error:" + error);
-    //    }
-///    })
 
 }
   
