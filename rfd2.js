@@ -28,7 +28,7 @@ function FetchData(tkn){
 var elementEmpty="";
     var url_string = window.location.href
 var url = new URL(url_string);
-var tkn = url.searchParams.get("tk");
+var tkn = url.searchParams.get("tknv");
 FetchData(tkn)
 
 var DomOutline = function (options) {
