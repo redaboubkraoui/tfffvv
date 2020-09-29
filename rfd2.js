@@ -215,8 +215,8 @@ console.log("thi  "+reda.className)
 //console.log("afte"+elementpicked)
 elementpicked= er;
 jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
-      $('.deferent').click( async function() {
-        
+      $('.deferent').click(  function() {
+        console.log('hello')
    var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
     for (var i =re.length-1; i >-1; i--) {
@@ -224,7 +224,7 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
     }
 //console.log(re)
    }
-         await myDomOutline.start();
+          myDomOutline.start();
         $('#pos-editor-instruction-container').css("display" ,"block");
         $('#pos-editor-actions').css("display" ,"none");
         $('#trust-seals-content-div').css("opacity","0.5");
