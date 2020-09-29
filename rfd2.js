@@ -522,25 +522,22 @@ sendplaceToServer(POS)
 
 
 });
-
-  $('.deferent').click(  function() {
+  
+$('.deferent').on('click', function() {
         var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
     for (var i =re.length-1; i >-1; i--) {
           re[i].remove()
     }    
-     
-     myDomOutline.start();
+
+   }
+        myDomOutline.start();
         $('#pos-editor-instruction-container').css("display" ,"block");
         $('#pos-editor-actions').css("display" ,"none");
-        $('#trust-seals-content-div').css("opacity","0.5");
-                         
-//console.log(re)
-   }
-     
+        $('#trust-seals-content-div').css("opacity","0.5");  
                        
+})
 
-});
 
 function sendplaceToServer(pos){
   var data =  getElementXPath(pos);
