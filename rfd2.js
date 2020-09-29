@@ -215,8 +215,8 @@ console.log("thi  "+reda.className)
 elementpicked= er;
 jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
       $('.deferent').click(function() {
-        alert('reda')
-         var re= document.getElementsByClassName("trust-seals-preview")
+    setTimeout(function(){
+   var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
     for (var i =re.length-1; i >-1; i--) {
           re[i].remove()
@@ -227,6 +227,9 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
         $('#pos-editor-instruction-container').css("display" ,"block");
         $('#pos-editor-actions').css("display" ,"none");
         $('#trust-seals-content-div').css("opacity","0.5");
+                         
+                         }, 5000);   
+
 });
 
 //console.log("before"+elementpicked)
