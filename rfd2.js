@@ -215,7 +215,7 @@ console.log("thi  "+reda.className)
 //console.log("afte"+elementpicked)
 elementpicked= er;
 jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
-      $('.deferent').click(  function() {
+      $('#deferent').click(  function() {
         var re= document.getElementsByClassName("trust-seals-preview")
    if(re && re.length>0){
     for (var i =re.length-1; i >-1; i--) {
