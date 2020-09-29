@@ -229,7 +229,7 @@ jQuery('body').bind('click.' + self.opts.namespace, clickHandler);
         $('#pos-editor-actions').css("display" ,"none");
         $('#trust-seals-content-div').css("opacity","0.5");
                          
-                         }, 5000);   
+                         }, 3000);   
 
 });
 
