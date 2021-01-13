@@ -55,10 +55,13 @@ else if(pageURL.indexOf('/products/') > -1) {
                         }
                     });
                     if(showAddtoCartPixel != '' ) {
-                        $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
-                    }
-                            console.log('try')
+                  
+      $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
+                    
+  console.log(fbTrackCode)
 
+}
+  console.log(showAddtoCartPixel)
                 });
             } else {
                 $('form[action="/cart/add"]').submit(function(e) {
