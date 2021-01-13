@@ -1,7 +1,7 @@
 
    var pageURL = window.location.href;
     var cart_url = '//'+window.location.hostname+'/cart.json';
-    var currency = $('.shopCurrency').text();
+    var currency = ShopifyAnalytics.meta.currency
 var showPixel =""
    
     if(pageURL.indexOf(window.location.hostname+'/cart') > -1) {
