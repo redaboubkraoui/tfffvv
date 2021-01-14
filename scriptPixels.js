@@ -21,12 +21,12 @@
 
         // Start On Checkout button click
         $('body').on('click', '[name="checkout"]', function(e) {
-            ajaxCheckout($,cart_url,fbTrackCode,currency);
+            ajaxCheckout(cart_url,fbTrackCode,currency);
         });
 
         if($('[name="checkout"]').length == 0) {
           $('body').on('click', 'form[action="/checkout"] [type="submit"], [href="/checkout"]', function() {
-            ajaxCheckout($,cart_url,fbTrackCode,currency);
+            ajaxCheckout(cart_url,fbTrackCode,currency);
           });
         }
         // End On Checkout button click
@@ -118,11 +118,11 @@
 
             // Start On Checkout button click
             $('body').on('click', '[name="checkout"]', function() {
-              ajaxCheckout($,cart_url,fbTrackCode,currency);
+              ajaxCheckout(cart_url,fbTrackCode,currency);
             });
             if($('[name="checkout"]').length == 0) {
               $('body').on('click', 'form[action="/checkout"] [type="submit"], [href="/checkout"], .fastcheckout_buy_button', function(){
-                ajaxCheckout($,cart_url,fbTrackCode,currency);
+                ajaxCheckout(cart_url,fbTrackCode,currency);
               });
             }
             // End On Checkout button click
@@ -147,11 +147,11 @@
 		$('head').append("<script>"+fbTrackCode+""+showPixel+"fbq('track', 'PageView');</script><noscript>"+showImgPixel+"</noscript>");
         // Start On Checkout button click
         $('body').on('click', '[name="checkout"]', function() {
-          ajaxCheckout($,cart_url,fbTrackCode,currency);
+          ajaxCheckout(cart_url,fbTrackCode,currency);
         });
         if($('[name="checkout"]').length == 0) {
           $('body').on('click', 'form[action="/checkout"] [type="submit"], [href="/checkout"], .fastcheckout_buy_button', function(){
-            ajaxCheckout($,cart_url,fbTrackCode,currency);
+            ajaxCheckout(cart_url,fbTrackCode,currency);
           });
         }
         // End On Checkout button click
@@ -193,14 +193,36 @@
 
         // Start On Checkout button click
         $('body').on('click', '[name="checkout"]', function() {
-          ajaxCheckout($,cart_url,fbTrackCode,currency);
+          ajaxCheckout(cart_url,fbTrackCode,currency);
         });
         if($('[name="checkout"]').length == 0) {
           $('body').on('click', 'form[action="/checkout"] [type="submit"], [href="/checkout"], .fastcheckout_buy_button', function(){
-            ajaxCheckout($,cart_url,fbTrackCode,currency);
+            ajaxCheckout(cart_url,fbTrackCode,currency);
           });
         }
         // End On Checkout button click
       }
     }
   }
+
+  function ajaxCheckout(cart_url,fbTrackCode,currency) {
+    $.ajax({
+        url: cart_url,
+        dataType: 'jsonp',
+        header: {
+            'Access-Control-Allow-Origin': '*'
+        },
+        success: function(response) {
+            contentIDs = [];
+            $.each(response.items, function(index,value){
+                contentIDs.push(value.product_id);
+            });
+            var total_price = Shopify.formatMoney(response.total_price);
+            total_price = total_price.replace(/[^0-9\.]/g,'');
+            
+            var checkoutPixel = "fbq('track', 'InitiateCheckout',{ content_type: 'product_group', content_ids: ["+contentIDs+"], num_items: "+response.item_count+", currency: '"+currency+"',value: "+total_price+"});";
+            
+            $('head').append("<script>"+fbTrackCode+""+checkoutPixel);
+        }
+    });
+}
