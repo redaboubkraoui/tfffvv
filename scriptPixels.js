@@ -162,7 +162,7 @@
   else {
     if(pixels.length) {
      $.each(pixels,function(i,val) { 
-        var fbPixel = $(this).text();
+        var fbPixel = val;
         showPixel += "fbq('init', '"+fbPixel+"');";
         showImgPixel += "<img height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id="+fbPixel+"&ev=PageView&noscript=1'/>";
       });
