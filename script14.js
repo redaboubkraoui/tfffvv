@@ -106,6 +106,11 @@ console.log(pixels)
                           showAddtoCartPixel += "fbq('track', 'AddToCart', {content_ids: ["+product.id+"],content_type:'product_group',value: "+price+", content_name: '"+product.title+"', currency: '"+currency+"', content_category: ''});";
                         }
                     });
+
+                                         if (pinterestid) {
+        pintrk('track', 'addtocart',  {content_ids: ["+product.id+"],content_type:'product_group',value: "+price+", content_name: '"+product.title+"', currency: '"+currency+"', content_category: ''});
+      }
+           
                     if(showAddtoCartPixel != '' ) {
                         $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
                     }
