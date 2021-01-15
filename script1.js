@@ -8,7 +8,15 @@
   var currency = Shopify.currency.active
     // cart page
   if(pageURL.indexOf(window.location.hostname+'/cart') > -1) {
-    if(pixels.length) {
+
+  	var prodcollections = document.querySelector('product-collection');
+    if (prodcollections != null) {
+    	pixels =[]
+       prodcollections = prodcollections.innerHTML.trim().slice(0, -1).split(',');
+    }  
+SetPixels(collectinosData,prodcollections)
+console.log(pixels)
+    if(pixels.length) { 
       $.each(pixels,function(i,val) {
 		var fbPixel = val
         showPixel += "fbq('init', '"+fbPixel+"');";
@@ -141,6 +149,16 @@ console.log(pixels)
 
   // start collection page
   else if(pageURL.indexOf('/collections') > -1) {
+
+
+  	var prodcollections = document.querySelector('page-collection-id');
+    if (prodcollections != null) {
+    	pixels =[]
+       prodcollections = prodcollections.innerHTML.trim().slice(0, -1).split(',');
+    }  
+SetPixels(collectinosData,prodcollections)
+
+  	
     if(pixels.length) {
       var fbTrackCode = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');";
       $.each(pixels,function(i,val) {
