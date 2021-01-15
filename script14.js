@@ -107,9 +107,7 @@ console.log(pixels)
                         }
                     });
 
-                                         if (pinterestid) {
-        pintrk('track', 'addtocart',  {content_ids: ["+product.id+"],content_type:'product_group',value: "+price+", content_name: '"+product.title+"', currency: '"+currency+"', content_category: ''});
-      }
+
            
                     if(showAddtoCartPixel != '' ) {
                         $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
@@ -125,8 +123,11 @@ console.log(pixels)
                     if(product.variants[index].id == variantid){
                       var price = product.variants[index].price;
                       price = price * qty;
-                      //showAddtoCartPixel += "fbq('track', 'AddToCart', {value: "+price+",currency: '"+currency+"'});";
     				  showAddtoCartPixel += "fbq('track', 'AddToCart', {content_ids: ["+product.id+"],content_type:'product_group',value: "+price+", content_name: '"+product.title+"', currency: '"+currency+"', content_category: ''});";
+                                                        if (pinterestid) {
+        pintrk('track', 'addtocart',  {content_ids: ["+product.id+"],content_type:'product_group',value: "+price+", content_name: '"+product.title+"', currency: '"+currency+"', content_category: ''});
+      }
+
                     }
                   });
                   if(showAddtoCartPixel != '' ) {
