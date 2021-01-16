@@ -205,13 +205,15 @@ console.log(pixels)
   else {
 
     loadpint(pinterestid)
-SetPixels(collectinosData,prodcollections)
-console.log(pixels)
     pintrk('track', 'pagevisit');
 
 
+//SetPixels(collectinosData,prodcollections)
+//console.log(pixels)
 
-  	
+
+
+
     if(pixels.length) {
      $.each(pixels,function(i,val) { 
         var fbPixel = val;
