@@ -2,6 +2,8 @@
  var pixels = [];
  var collectinosData = [{'collections' :'241218158789','fbpixels':['273944367460006','2880081595607508','2468047136583083']},{'collections' :'236329337029','fbpixels':['792958774593796','721848285202228','2880081595607508','601078379966926']},{'collections':'12','fbpixels' :['792958774593796','273944367460006','2880081595607508']}]
 var  pinterestid = '2612942107035' 
+  var snapchatid = '8679daef-53ed-4b5d-b552-6e232b23909d'
+
  var showPixel = showImgPixel = '';
   var pageURL = window.location.href;
   var cart_url = '//'+window.location.hostname+'/cart.json';
@@ -15,9 +17,10 @@ var  pinterestid = '2612942107035'
        prodcollections = prodcollections.innerHTML.trim().slice(0, -1).split(',');
     }  
     loadpint(pinterestid)
+    loadsnap(snapchatid)
 SetPixels(collectinosData,prodcollections)
-console.log(pixels)
-  
+
+   	snaptr('track', 'PAGE_VIEW');
     pintrk('track', 'pagevisit');
     if(pixels.length) { 
       $.each(pixels,function(i,val) {
@@ -53,7 +56,10 @@ var prodcollections = document.querySelector('product-collection');
        prodcollections = prodcollections.innerHTML.trim().slice(0, -1).split(',');
     }  
     loadpint(pinterestid)
+    loadsnap(snapchatid)
 SetPixels(collectinosData,prodcollections)
+
+   	snaptr('track', 'PAGE_VIEW');
 console.log(pixels)
     pintrk('track', 'pagevisit');
 
@@ -317,10 +323,26 @@ function loadpint(pinid){
       }
 }
 
+function loadsnap(snapid)
+{
 
+if (snapid!==null) {
+(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+{a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
+r.src=n;var u=t.getElementsByTagName(s)[0];
+u.parentNode.insertBefore(r,u);})(window,document,
+'https://sc-static.net/scevent.min.js');
+
+snaptr('init', snapid, {
+'user_email': 'futureCobra12@gmail.com'
+});
+
+}
+}
 
 function AddTocart(pinterestid,productData){
- if (pinterestid) {
+ if (pinterestid !==null) {
        console.log(productData)
         pintrk('track', 'addtocart',  productData);
       }
