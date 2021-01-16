@@ -61,10 +61,10 @@ var prodcollections = document.querySelector('product-collection');
     }  
     loadpint(pinterestid)
     loadsnap(snapchatid)
-    loadtw(twid)
 SetPixels(collectinosData,prodcollections)
    	snaptr('track', 'PAGE_VIEW');
     pintrk('track', 'pagevisit');
+    loadtw(twid)
 twq('track','PageView');
 
   if(pixels.length) {
