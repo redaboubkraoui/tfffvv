@@ -107,7 +107,12 @@ console.log(pixels)
                         }
                     });
 
-
+var productData = {content_ids: '['+product.id+']',content_type:product_group,value: price, content_name: product.title, currency: currency, content_category: ''};
+console.log(productData)
+ if (pinterestid) {
+       console.log(productData)
+        pintrk('track', 'addtocart',  productData);
+      }
            
                     if(showAddtoCartPixel != '' ) {
                         $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
@@ -130,8 +135,7 @@ console.log(pixels)
                     }
                   });
 
-
-				    	var productData = {content_ids: '['+product.id+']',content_type:product_group,value: price, content_name: product.title, currency: currency, content_category: ''};
+var productData = {content_ids: '['+product.id+']',content_type:product_group,value: price, content_name: product.title, currency: currency, content_category: ''};
 console.log(productData)
  if (pinterestid) {
        console.log(productData)
