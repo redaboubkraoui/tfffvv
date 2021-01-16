@@ -116,7 +116,7 @@ SetPixels(collectinosData,prodcollections)
                         }
                     });
 
-AddTocart(pinterestid,productData)
+AddTocart(pinterestid,productData,snapchatid)
                     if(showAddtoCartPixel != '' ) {
                         $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
                     }
@@ -138,7 +138,7 @@ AddTocart(pinterestid,productData)
                     }
                   });
 
-AddTocart(pinterestid,productData)
+AddTocart(pinterestid,productData,snapchatid)
                   if(showAddtoCartPixel != '' ) {
                     $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
                   }
@@ -216,9 +216,7 @@ console.log(pixels)
 //console.log(pixels)
 
 
-
-
-    if(pixels.length) {
+if(pixels.length) {
      $.each(pixels,function(i,val) { 
         var fbPixel = val;
         showPixel += "fbq('init', '"+fbPixel+"');";
@@ -285,9 +283,6 @@ console.log(pixels)
     });
 }
 
-
-
-
 function SetPixels(collectinosData,productsCollections) {
 console.log(collectinosData)
 for (var i = 0;i<collectinosData.length;i++){
@@ -299,8 +294,9 @@ if(!pixels.includes(collectinosData[i].fbpixels[j]))
                   pixels.push(collectinosData[i].fbpixels[j]);
 }  } }
 
+
 function loadpint(pinid){
-	      if (pinid != null) {
+	      if (pinid) {
         !function (e) {
           if (!window.pintrk) {
             window.pintrk = function () {
@@ -324,7 +320,7 @@ function loadpint(pinid){
 function loadsnap(snapid)
 {
 
-if (snapid!==null) {
+if (snapid) {
 (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
 {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
 a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
@@ -339,10 +335,16 @@ snaptr('init', snapid, {
 }
 }
 
-function AddTocart(pinterestid,productData){
- if (pinterestid !==null) {
+function AddTocart(pinterestid,productData,snapid){
+ if (pinterestid) {
        console.log(productData)
         pintrk('track', 'addtocart',  productData);
       }
+if (snapid) {
+      snaptr('track', 'ADD_CART');
+
+}
+
+
 
 }
