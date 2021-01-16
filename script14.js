@@ -63,10 +63,9 @@ var prodcollections = document.querySelector('product-collection');
     loadsnap(snapchatid)
     loadtw(twid)
 SetPixels(collectinosData,prodcollections)
-
-	twq('track','PageView');
    	snaptr('track', 'PAGE_VIEW');
     pintrk('track', 'pagevisit');
+twq('track','PageView');
 
   if(pixels.length) {
       var showAddtoCartPixel = '';
