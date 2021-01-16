@@ -58,9 +58,7 @@ var prodcollections = document.querySelector('product-collection');
     loadpint(pinterestid)
     loadsnap(snapchatid)
 SetPixels(collectinosData,prodcollections)
-
    	snaptr('track', 'PAGE_VIEW');
-console.log(pixels)
     pintrk('track', 'pagevisit');
 
   if(pixels.length) {
