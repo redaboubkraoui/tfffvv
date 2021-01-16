@@ -123,7 +123,7 @@ SetPixels(collectinosData,prodcollections)
                         }
                     });
 
-AddTocart(pinterestid,productData,snapchatid)
+AddTocart(pinterestid,productData,snapchatid,twid)
                     if(showAddtoCartPixel != '' ) {
                         $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
                     }
@@ -145,7 +145,7 @@ AddTocart(pinterestid,productData,snapchatid)
                     }
                   });
 
-AddTocart(pinterestid,productData,snapchatid)
+AddTocart(pinterestid,productData,snapchatid,twid)
                   if(showAddtoCartPixel != '' ) {
                     $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
                   }
@@ -357,16 +357,18 @@ twq('init',twid);
 
 }
 
-function AddTocart(pinterestid,productData,snapid){
+function AddTocart(pinterestid,productData,snapid,twid){
  if (pinterestid) {
-       console.log(productData)
         pintrk('track', 'addtocart',  productData);
       }
 if (snapid) {
-      snaptr('track', 'ADD_CART');
+      snaptr('track', 'ADD_CART',productData);
 
 }
+if (twid)
+{
 
-
+twq('track','AddToCart',productData)
+}
 
 }
