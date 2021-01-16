@@ -1,9 +1,9 @@
- var productData={}
- var pixels = [];
- var collectinosData = [{'collections' :'241218158789','fbpixels':['273944367460006','2880081595607508','2468047136583083']},{'collections' :'236329337029','fbpixels':['792958774593796','721848285202228','2880081595607508','601078379966926']},{'collections':'12','fbpixels' :['792958774593796','273944367460006','2880081595607508']}]
+var productData={}
+var pixels = [];
+var collectinosData = [{'collections' :'241218158789','fbpixels':['273944367460006','2880081595607508','2468047136583083']},{'collections' :'236329337029','fbpixels':['792958774593796','721848285202228','2880081595607508','601078379966926']},{'collections':'12','fbpixels' :['792958774593796','273944367460006','2880081595607508']}]
 var  pinterestid = '2612942107035' 
-  var snapchatid = '8679daef-53ed-4b5d-b552-6e232b23909d'
-
+var snapchatid = '8679daef-53ed-4b5d-b552-6e232b23909d'
+var  twid='o5bot' 
  var showPixel = showImgPixel = '';
   var pageURL = window.location.href;
   var cart_url = '//'+window.location.hostname+'/cart.json';
@@ -18,8 +18,10 @@ var  pinterestid = '2612942107035'
     }  
     loadpint(pinterestid)
     loadsnap(snapchatid)
+    loadtw(twid)
 SetPixels(collectinosData,prodcollections)
 
+	twq('track','PageView');
    	snaptr('track', 'PAGE_VIEW');
     pintrk('track', 'pagevisit');
     if(pixels.length) { 
@@ -32,6 +34,8 @@ SetPixels(collectinosData,prodcollections)
         var fbTrackCode = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');";
         $('head').append("<script>"+fbTrackCode+""+showPixel+"fbq('track', 'PageView');</script><noscript>"+showImgPixel+"</noscript>");
             
+
+
 
         // Start On Checkout button click
         $('body').on('click', '[name="checkout"]', function(e) {
@@ -57,7 +61,10 @@ var prodcollections = document.querySelector('product-collection');
     }  
     loadpint(pinterestid)
     loadsnap(snapchatid)
+    loadtw(twid)
 SetPixels(collectinosData,prodcollections)
+
+	twq('track','PageView');
    	snaptr('track', 'PAGE_VIEW');
     pintrk('track', 'pagevisit');
 
@@ -170,16 +177,17 @@ AddTocart(pinterestid,productData,snapchatid)
 
   // start collection page
   else if(pageURL.indexOf('/collections') > -1) {
-
-
   	var prodcollections = document.querySelector('page-collection-id');
     if (prodcollections != null) {
     	pixels =[]
        prodcollections = prodcollections.innerHTML.trim().slice(0, -1).split(',');
     }  
-    loadpint(pinterestid)
-SetPixels(collectinosData,prodcollections)
-console.log(pixels)
+     loadpint(pinterestid)
+    loadsnap(snapchatid)
+    loadtw(twid)
+	SetPixels(collectinosData,prodcollections)
+	twq('track','PageView');
+	snaptr('track', 'PAGE_VIEW');
     pintrk('track', 'pagevisit');
 
     if(pixels.length) {
@@ -192,6 +200,7 @@ console.log(pixels)
       if(showPixel != '') {
 		// Pixel here 
 		$('head').append("<script>"+fbTrackCode+""+showPixel+"fbq('track', 'PageView');</script><noscript>"+showImgPixel+"</noscript>");
+
         // Start On Checkout button click
         $('body').on('click', '[name="checkout"]', function() {
           ajaxCheckout(cart_url,fbTrackCode,currency);
@@ -333,6 +342,19 @@ snaptr('init', snapid, {
 });
 
 }
+}
+
+
+function loadtw(twid)
+{
+
+if (twid){
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+}
+twq('init',twid);
+
 }
 
 function AddTocart(pinterestid,productData,snapid){
