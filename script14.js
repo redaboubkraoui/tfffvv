@@ -1,4 +1,4 @@
- 
+ var productData={}
  var pixels = [];
  var collectinosData = [{'collections' :'241218158789','fbpixels':['273944367460006','2880081595607508','2468047136583083']},{'collections' :'236329337029','fbpixels':['792958774593796','721848285202228','2880081595607508','601078379966926']},{'collections':'12','fbpixels' :['792958774593796','273944367460006','2880081595607508']}]
 var  pinterestid = '2612942107035' 
@@ -104,10 +104,11 @@ console.log(pixels)
                           price = price * qty;
                           //showAddtoCartPixel += "fbq('track', 'AddToCart', {value: "+price+",currency: '"+currency+"'});";
                           showAddtoCartPixel += "fbq('track', 'AddToCart', {content_ids: ["+product.id+"],content_type:'product_group',value: "+price+", content_name: '"+product.title+"', currency: '"+currency+"', content_category: ''});";
+                     productData = {content_ids: '['+product.id+']',content_type:'product_group',value: price, content_name: product.title, currency: currency, content_category: ''};
+
                         }
                     });
 
-var productData = {content_ids: '['+product.id+']',content_type:'product_group',value: price, content_name: product.title, currency: currency, content_category: ''};
 console.log(productData)
  if (pinterestid) {
        console.log(productData)
@@ -129,13 +130,12 @@ console.log(productData)
                       var price = product.variants[index].price;
                       price = price * qty;
     				  showAddtoCartPixel += "fbq('track', 'AddToCart', {content_ids: ["+product.id+"],content_type:'product_group',value: "+price+", content_name: '"+product.title+"', currency: '"+currency+"', content_category: ''});";
-
+    				   productData = {content_ids: '['+product.id+']',content_type:'product_group',value: price, content_name: product.title, currency: currency, content_category: ''};
 
 
                     }
                   });
 
-var productData = {content_ids: '['+product.id+']',content_type:'product_group',value: price, content_name: product.title, currency: currency, content_category: ''};
 console.log(productData)
  if (pinterestid) {
        console.log(productData)
