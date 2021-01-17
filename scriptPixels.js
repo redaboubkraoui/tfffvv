@@ -126,7 +126,7 @@ loadtbpageview(tblid)
                         }
                     });
 
-AddTocart(pinterestid,productData,snapchatid,twid)
+AddTocart(pinterestid,productData,snapchatid,twid,tblid)
                     if(showAddtoCartPixel != '' ) {
                         $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
                     }
@@ -148,7 +148,7 @@ AddTocart(pinterestid,productData,snapchatid,twid)
                     }
                   });
 
-AddTocart(pinterestid,productData,snapchatid,twid)
+AddTocart(pinterestid,productData,snapchatid,twid,tblid)
                   if(showAddtoCartPixel != '' ) {
                     $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
                   }
@@ -373,7 +373,8 @@ $('head').append(tblscripi+"<noscript><img src='https://trc.taboola.com/"+tblid+
 
 
 
-function AddTocart(pinterestid,productData,snapid,twid){
+
+function AddTocart(pinterestid,productData,snapid,twid,tblid){
  if (pinterestid) {
         pintrk('track', 'addtocart',  productData);
       }
@@ -386,5 +387,9 @@ if (twid)
 
 twq('track','AddToCart',productData)
 }
+if (tblid) {
+var tblscripi = "<script>  _tfa.push({notify: 'event', name: 'add_to_cart', id: "+tblid+"});</script>"
+$('head').append(tblscripi+"<noscript><img src='https://trc.taboola.com/"+tblid+"/log/3/unip?en=add_to_cart'width='0' height='0' style='display:none' /></noscript>");
 
+}
 }
