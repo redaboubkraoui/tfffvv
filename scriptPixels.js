@@ -4,11 +4,12 @@ var collectinosData = [{'collections' :'241218158789','fbpixels':['2739443674600
 var  pinterestid = '2612942107035' 
 var snapchatid = '8679daef-53ed-4b5d-b552-6e232b23909d'
 var  twid='o5bot' 
- var showPixel = showImgPixel = '';
-  var pageURL = window.location.href;
-  var cart_url = '//'+window.location.hostname+'/cart.json';
-  var currency = Shopify.currency.active
-  var tblid ='1259987'
+var showPixel = showImgPixel = '';
+var pageURL = window.location.href;
+var cart_url = '//'+window.location.hostname+'/cart.json';
+var currency = Shopify.currency.active
+var tblid ='1259987'
+var gtmid = 'GTM-TJDJQRX'
     // cart page
   if(pageURL.indexOf(window.location.hostname+'/cart') > -1) {
 
@@ -26,7 +27,7 @@ SetPixels(collectinosData,prodcollections)
    	snaptr('track', 'PAGE_VIEW');
     pintrk('track', 'pagevisit');
     loadtbpageview(tblid)
-
+    loadgtmpageview(gtmid)
     if(pixels.length) { 
       $.each(pixels,function(i,val) {
 		var fbPixel = val
@@ -70,6 +71,7 @@ SetPixels(collectinosData,prodcollections)
     loadtw(twid)
 twq('track','PageView');
 loadtbpageview(tblid)
+loadgtmpageview(gtmid)
 
   if(pixels.length) {
       var showAddtoCartPixel = '';
@@ -192,6 +194,7 @@ AddTocart(pinterestid,productData,snapchatid,twid,tblid)
 	twq('track','PageView');
 	snaptr('track', 'PAGE_VIEW');
     pintrk('track', 'pagevisit');
+    loadgtmpageview(gtmid)
     if(pixels.length) {
       var fbTrackCode = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');";
       $.each(pixels,function(i,val) {
@@ -369,6 +372,27 @@ $('head').append(tblscripi+"<noscript><img src='https://trc.taboola.com/"+tblid+
 }
 
 }
+
+function loadgtmpageview(gtmid)
+{
+
+if (gtmid) {
+var tblscripi = `<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${gtmid}');</script>
+<!-- End Google Tag Manager -->    `;
+$('head').append(tblscripi)
+var ns = `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${gtmid} "
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`
+$('body').append(ns)
+
+}
+
+}
+
 
 
 
