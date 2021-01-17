@@ -388,7 +388,7 @@ if (twid)
 twq('track','AddToCart',productData)
 }
 if (tblid) {
-var tblscripi = "<script>  _tfa.push({notify: 'event', name: 'add_to_cart', id: "+tblid+",'value':"+productData.price+",'content_name:'"+productData.product.title+",'currency:'"+productData.currency+"});</script>"
+var tblscripi = "<script>  _tfa.push({notify: 'event', name: 'add_to_cart', id: "+tblid+",'value':"+productData.value+",'content_name:'"+productData.content_name+",'currency:'"+productData.currency+"});</script>"
 $('head').append(tblscripi+"<noscript><img src='https://trc.taboola.com/"+tblid+"/log/3/unip?en=add_to_cart'width='0' height='0' style='display:none' /></noscript>");
 
 }
