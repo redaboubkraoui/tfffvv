@@ -1,3 +1,4 @@
+
 var productData={}
 var pixels = ['273944367460006','1904241839800487'];
 var collectinosData = [{'collections' :'241218158789','fbpixels':['273944367460006','2880081595607508','2468047136583083']},{'collections' :'236329337029','fbpixels':['792958774593796','721848285202228','2880081595607508','601078379966926']}]
@@ -121,7 +122,7 @@ var qty = 1;
 
 
 //otherPixels
-                        AddTocart(pinterestid,productData,snapchatid,twid,tblid)
+                        AddTocart(pinterestid,productData,snapchatid,twid,tblid,tktid)
                         if(showAddtoCartPixel != '' ) {
                             $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
                         }
@@ -140,7 +141,7 @@ var qty = 1;
                         });
 
 //otherPixels
-                        AddTocart(pinterestid,productData,snapchatid,twid,tblid)
+                        AddTocart(pinterestid,productData,snapchatid,twid,tblid,tktid)
                         if(showAddtoCartPixel != '' ) {
                             $('head').append("<script>"+fbTrackCode+""+showAddtoCartPixel+"</script>");
                         }
@@ -238,7 +239,7 @@ else {
                 }
 
 var productData = {content_ids: "[" + proID + "]",content_type:'product_group',value: price , content_name: '' + proName , currency:currency , content_category: ''}
-        AddTocart(pinterestid,productData,snapchatid,twid,tblid)
+        AddTocart(pinterestid,productData,snapchatid,twid,tblid,tktid)
 
         if(pixels.length) {
                     var showAddtoCartPixel = "fbq('track', 'AddToCart', {content_ids: [" + proID + "],content_type:'product_group',value: " + price + ", content_name: '" + proName + "', currency: '" + currency + "', content_category: ''});";
@@ -397,7 +398,7 @@ function loadtkt(tktid)
 
 }
 
-function AddTocart(pinterestid,productData,snapid,twid,tblid){
+function AddTocart(pinterestid,productData,snapid,twid,tblid,tktid){
     if (pinterestid) {
         pintrk('track', 'addtocart',  productData);
     }
@@ -417,4 +418,15 @@ function AddTocart(pinterestid,productData,snapid,twid,tblid){
 
     }
 
+ if (tktid) {
+ ttq.track('AddToCart',productData)
+    }
+
 }
+
+
+
+
+
+
+
