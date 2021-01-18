@@ -8,7 +8,7 @@ var  twid='o5bot'
   var pageURL = window.location.href;
   var cart_url = '//'+window.location.hostname+'/cart.json';
   var currency = Shopify.currency.active
-  var tblid ='1259987'
+  var tblid =''
     // cart page
   if(pageURL.indexOf(window.location.hostname+'/cart') > -1) {
 
@@ -377,7 +377,7 @@ function AddTocart(pinterestid,productData,snapid,twid,tblid){
         pintrk('track', 'addtocart',  productData);
       }
 if (snapid) {
-		
+
       snaptr('track', 'ADD_CART',productData);
 
 }
