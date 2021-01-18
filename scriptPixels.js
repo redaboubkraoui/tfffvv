@@ -208,7 +208,8 @@ else if(pageURL.indexOf('/collections') > -1) {
 }
 // start other pages
 else {
-    SetPixels(collectinosData,prodcollections)
+
+  //  SetPixels(collectinosData,prodcollections)
     loadotherpixels(pinterestid,snapchatid,twid,tblid)
     var fbTrackCode =""
     if(pixels.length) {
