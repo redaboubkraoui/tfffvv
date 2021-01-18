@@ -315,7 +315,7 @@ if (twid)
 }
 
 if (tblid)
-loadtbp(tblid)
+loadtb(tblid)
 
 }
 
@@ -377,6 +377,7 @@ function AddTocart(pinterestid,productData,snapid,twid,tblid){
         pintrk('track', 'addtocart',  productData);
       }
 if (snapid) {
+		
       snaptr('track', 'ADD_CART',productData);
 
 }
