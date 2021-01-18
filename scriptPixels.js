@@ -323,16 +323,13 @@ function loadotherpixels(pinid,snapid,twid,tblid,tktid)
         twq('track','PageView');
     }
 
-    if (tktid) {
-loadtkt(tktid)
-    }
-
     if (tblid){
         loadtb(tblid)
     }
+if (tktid) {
 
-
-
+	loadtkt(tktid)
+}
 }
 
 
@@ -385,6 +382,7 @@ function loadtb(tblid)
     $('head').append(tblscripi+"<noscript><img src='https://trc.taboola.com/"+tblid+"/log/3/unip?en=page_view'width='0' height='0' style='display:none' /></noscript>");
 
 }
+
 function loadtkt(tktid)
 {
 
@@ -398,7 +396,6 @@ function loadtkt(tktid)
 
 
 }
-
 
 function AddTocart(pinterestid,productData,snapid,twid,tblid){
     if (pinterestid) {
@@ -421,6 +418,3 @@ function AddTocart(pinterestid,productData,snapid,twid,tblid){
     }
 
 }
-
-
-
