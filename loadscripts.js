@@ -3,12 +3,12 @@ var pixels = [];
 var collectinosData = [{'collections' :'241218158789','fbpixels':['273944367460006','2880081595607508','2468047136583083']},{'collections' :'236329337029','fbpixels':['792958774593796','721848285202228','2880081595607508','601078379966926']},{'collections':'12','fbpixels' :['792958774593796','273944367460006','2880081595607508']}]
 var  pinterestid = '2612942107035' 
 var snapchatid = '8679daef-53ed-4b5d-b552-6e232b23909d'
-var  twid=null 
+var  twid='o5bot' 
  var showPixel = showImgPixel = '';
   var pageURL = window.location.href;
   var cart_url = '//'+window.location.hostname+'/cart.json';
   var currency = Shopify.currency.active
-  var tblid =''
+  var tblid ='1259987'
     // cart page
   if(pageURL.indexOf(window.location.hostname+'/cart') > -1) {
 
@@ -377,7 +377,7 @@ function AddTocart(pinterestid,productData,snapid,twid,tblid){
         pintrk('track', 'addtocart',  productData);
       }
 if (snapid) {
-
+		
       snaptr('track', 'ADD_CART',productData);
 
 }
@@ -393,4 +393,6 @@ $('head').append(tblscripi+"<noscript><img src='https://trc.taboola.com/"+tblid+
 }
 
 }
+
+
 
