@@ -1,5 +1,5 @@
 var productData={}
-var pixels = [];
+var pixels = ['273944367460006','1904241839800487'];
 var collectinosData = [{'collections' :'241218158789','fbpixels':['273944367460006','2880081595607508','2468047136583083']},{'collections' :'236329337029','fbpixels':['792958774593796','721848285202228','2880081595607508','601078379966926']}]
 var  pinterestid = '2612942107035'
 var snapchatid = '8679daef-53ed-4b5d-b552-6e232b23909d'
@@ -300,10 +300,6 @@ function SetPixels(collectinosData,productsCollections) {
     }
 
 }
-
-
-
-
 
 
 function loadotherpixels(pinid,snapid,twid,tblid)
