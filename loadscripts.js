@@ -280,7 +280,7 @@ if(pixels.length) {
 }
 
 function SetPixels(collectinosData,productsCollections) {
-
+if (collectinosData.length>0) {
 for (var i = 0;i<collectinosData.length;i++){
     if (productsCollections.includes(collectinosData[i].collections))
 for (var j=0;j<collectinosData[i].fbpixels.length;j++)  
@@ -289,6 +289,7 @@ console.log('pixel :' + collectinosData[i].collections)
 if(!pixels.includes(collectinosData[i].fbpixels[j]))
                   pixels.push(collectinosData[i].fbpixels[j]);
 }  }
+}
 
  }
 
@@ -355,7 +356,6 @@ snaptr('init', snapid, {
 
 }
 
-
 function loadtw(twid)
 {
 !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
@@ -377,7 +377,7 @@ function AddTocart(pinterestid,productData,snapid,twid,tblid){
         pintrk('track', 'addtocart',  productData);
       }
 if (snapid) {
-		
+
       snaptr('track', 'ADD_CART',productData);
 
 }
@@ -393,6 +393,4 @@ $('head').append(tblscripi+"<noscript><img src='https://trc.taboola.com/"+tblid+
 }
 
 }
-
-
 
