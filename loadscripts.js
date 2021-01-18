@@ -93,8 +93,8 @@ else if(pageURL.indexOf('/products/') > -1) {
 if  (showPixel !=''){
     showPixel += "fbq('track', 'ViewContent', {content_ids: ["+product.id+"],content_type:'product_group',value: "+product.variants[0].price+", content_name: '"+product.title+"', currency: '"+currency+"', content_category: ''});";
      fbTrackCode = "!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');";
-    
-} 
+
+}
 var qty = 1;
                 if($('form[action="/cart/add"] [name="quantity"]').length) {
                     $('form[action="/cart/add"] [name="quantity"]').on('change', function(){
@@ -117,7 +117,7 @@ var qty = 1;
                                 productData = {content_ids: '['+product.id+']',content_type:'product_group',value: price, content_name: product.title, currency: currency, content_category: ''};
                             }
                         });
-                        
+
 
 //otherPixels
                         AddTocart(pinterestid,productData,snapchatid,twid,tblid)
@@ -146,7 +146,7 @@ var qty = 1;
 
                     });
                 }
-
+                if(showPixel !='')
                 $('head').append("<script>"+fbTrackCode+""+showPixel+"fbq('track', 'PageView');</script><noscript>"+showImgPixel+"</noscript>");
 
                 // Start On Checkout button click
@@ -187,7 +187,7 @@ else if(pageURL.indexOf('/collections') > -1) {
             showImgPixel += "<img height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id="+fbPixel+"&ev=PageView&noscript=1'/>";
         });
         if(showPixel != '') {
-            // Pixel here 
+            // Pixel here
             $('head').append("<script>"+fbTrackCode+""+showPixel+"fbq('track', 'PageView');</script><noscript>"+showImgPixel+"</noscript>");
 
             // Start On Checkout button click
