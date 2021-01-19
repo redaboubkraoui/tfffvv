@@ -11,6 +11,7 @@ var cart_url = '//'+window.location.hostname+'/cart.json';
 var currency = Shopify.currency.active
 var tblid ='1259987'
 var tktid = 'C02QM01VB1UCAVUC8O4G'
+var newprodid = ""
 // cart page
 if(pageURL.indexOf(window.location.hostname+'/cart') > -1) {
 
@@ -58,8 +59,10 @@ else if(pageURL.indexOf('/products/') > -1) {
     var prodcollections = document.querySelector('product-collection');
     if (prodcollections != null) {
         prodcollections = prodcollections.innerHTML.trim().slice(0, -1).split(',');
-    }
 
+    }
+    newprodid = meta.product.id;
+    setproductdetailsstorage();
     SetPixels(collectinosData,prodcollections)
     loadotherpixels(pinterestid,snapchatid,twid,tblid,tktid)
 
@@ -286,6 +289,35 @@ function ajaxCheckout(cart_url,fbTrackCode,currency) {
     });
 }
 
+function setproductdetailsstorage() {
+  var array = localStorage.getItem('calltwo');
+
+  if (array != null) {
+    array = JSON.parse(array);
+    var length = array.length;
+
+    for (var i = 0; i < length; i++) {
+      if (array[i].newprodid == newprodid) {
+        return;
+      }
+        }
+
+    array.push({
+      newprodid: newprodid,
+      collections: prodcollections
+    });
+
+
+    localStorage.setItem('calltwo', JSON.stringify(array));
+  } else {
+    var array2 = [{
+      newprodid: newprodid,
+      collections: prodcollections
+     
+    }];
+    localStorage.setItem('calltwo', JSON.stringify(array2));
+  }
+}
 
 
 
