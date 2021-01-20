@@ -1,3 +1,11 @@
+var productData={}
+var showPixel = showImgPixel = '';
+var pageURL = window.location.href;
+var cart_url = '//'+window.location.hostname+'/cart.json';
+var currency = Shopify.currency.active
+var newprodid = ""
+var fbTrackCode = ""
+
 // cart page
 if(pageURL.indexOf(window.location.hostname+'/cart') > -1) {
 
