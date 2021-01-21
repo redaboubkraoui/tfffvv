@@ -343,6 +343,7 @@ function SetPixels(collectinosData,productsCollections,pxlscol) {
                         pixels.push(pxlscol); 
             } 
                }
+	    console.log(pixels)
                     
     }
 }
