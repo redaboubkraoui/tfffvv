@@ -335,12 +335,12 @@ function setproductdetailsstorage() {
 }
 
 
-function SetPixels(collectinosData,productsCollections,pixel) {
+function SetPixels(collectinosData,productsCollections,pxlscol) {
     if (productsCollections.length>0) {
         for (var i = 0;i<collectinosData.length;i++){
             if (productsCollections.includes(collectinosData[i]))
-            {   if(!pixels.includes(pixel))
-                        pixels.push(pixel); 
+            {   if(!pixels.includes(pxlscol))
+                        pixels.push(pxlscol); 
             } 
                }
                     
