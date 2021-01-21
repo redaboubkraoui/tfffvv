@@ -18,7 +18,7 @@ for (var i = 0; i < pxlscol.length; i++) {
 let col =  collectionspixels[pxlscol[i]]
 console.log(col)
 console.log(pxlscol[i])
-SetPixels(col,prodcollections,pixels[i])
+SetPixels(col,prodcollections,pxlscol[i])
 
 }
 
@@ -66,7 +66,7 @@ else if(pageURL.indexOf('/products/') > -1) {
 let col =  collectionspixels[pxlscol[i]]
 console.log(col)
 console.log(pxlscol[i])
-SetPixels(col,prodcollections,pixels[i])
+SetPixels(col,prodcollections,pxlscol[i])
 }
     loadotherpixels(pinterestid,snapchatid,twid,tblid,tktid)
 
@@ -192,7 +192,7 @@ else if(pageURL.indexOf('/collections') > -1) {
 let col =  collectionspixels[pxlscol[i]]
 console.log(col)
 console.log(pxlscol[i])
-SetPixels(col,prodcollections,pixels[i])
+SetPixels(col,prodcollections,pxlscol[i])
 }
     loadotherpixels(pinterestid,snapchatid,twid,tblid,tktid)
     if(pixels.length) {
