@@ -339,11 +339,10 @@ function SetPixels(collectinosData,productsCollections,pixel) {
     if (productsCollections.length>0) {
         for (var i = 0;i<collectinosData.length;i++){
             if (productsCollections.includes(collectinosData[i]))
-            {
-                    if(!pxl.includes(pixel))
-                        pxl.push(pixel); 
+            {   if(!pixels.includes(pixel))
+                        pixels.push(pixel); 
             } 
-                 }
+               }
                     
     }
 }
