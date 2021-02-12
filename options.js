@@ -1872,8 +1872,8 @@ var _slicedToArray = function () {
 							button: {
 								size: "lg",
 								text: "capitalize",
-								border: "type1",
-								radius: "type2",
+								border: "type2",
+								radius: "type1",
 								on_hover_3d: "shadow",
 								on_hover_scale: "light_inverse",
 								font_color_selected: "FFFFFF",
@@ -1886,14 +1886,13 @@ var _slicedToArray = function () {
 							"default": "button",
 							drop_down: {},
 							custom_image: {
-								size: "md",
-								scale: "type1",
-								shape: "landscape",
-								border: "type3",
-								radius: "type2",
 								position: "top",
+								radius: "type2",
+								scale: "type1",
+								shape: "circle",
+								size: "md",
 								dimension: {
-									width: "128px",
+									width: "80px",
 									height: "80px"
 								},
 								on_hover_3d: "glow",
@@ -1904,7 +1903,7 @@ var _slicedToArray = function () {
 							},
 							variant_image: {
 								size: "md",
-								scale: "type1",
+								scale: "type3",
 								shape: "landscape",
 								border: "type3",
 								radius: "type2",
