@@ -1,5 +1,3 @@
-    
-
 
 
 
@@ -319,7 +317,7 @@ var _slicedToArray = function () {
                         console.log(t)
                                                 console.log(e)
 
-                        return "https://media-cdn.starapps.studio/apps/vsk/" + this.storeSlug + "/groups/" + t.split("group")[1] + "/" + e + ".media"
+                        return "https://media-cdn.starapps.studio/apps/vsk/" + this.storeSlug + "/groups/" + t.split("group")[1] + "/" + e + ".jpg"
                     }
                 }, {
                     key: "generateProductGroups",
@@ -2678,7 +2676,7 @@ var _slicedToArray = function () {
                     value: function (t, e) {
                                     console.log(t)
                                                 console.log(e)
-                        return t = t.replace(RegExp('"', "gi"), ""), e = e.replace(RegExp('"', "gi"), ""), t = t.replace(RegExp("/", "gi"), "%2F"), e = e.replace(RegExp("/", "gi"), "%2F"), t = encodeURIComponent(t).replace(RegExp("['()]", "gi"), "\\$&"), e = encodeURIComponent(e).replace(RegExp("['()]", "gi"), "\\$&"), "https://media-cdn.starapps.studio/apps/vsk/" + this.storeSlug + "/swatches/" + t + "/" + e + ".media"
+                        return t = t.replace(RegExp('"', "gi"), ""), e = e.replace(RegExp('"', "gi"), ""), t = t.replace(RegExp("/", "gi"), "%2F"), e = e.replace(RegExp("/", "gi"), "%2F"), t = encodeURIComponent(t).replace(RegExp("['()]", "gi"), "\\$&"), e = encodeURIComponent(e).replace(RegExp("['()]", "gi"), "\\$&"), "https://media-cdn.starapps.studio/apps/vsk/" + this.storeSlug + "/swatches/" + t + "/" + e + ".jpg"
                     }
                 }, {
                     key: "getCustomImageView",
