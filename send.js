@@ -1,5 +1,5 @@
 var couponapp_domain = "https://couponx.premio.io/",
-fullpathName = window.location.href,
+fullpathName = "https://reda12king.myshopify.com/",
 pathName = window.location.pathname,
 pathName = pathName.substr(1),
 shopurl = Shopify.shop,
